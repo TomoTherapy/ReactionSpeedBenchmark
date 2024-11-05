@@ -1,0 +1,26 @@
+﻿<Window x:Class="ReactionSpeedBenchmark.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReactionSpeedBenchmark"
+        mc:Ignorable="d"
+		WindowStyle="None"
+        Title="MainWindow" Height="450" Width="800">
+	<Grid Background="White" MouseDown="Grid_MouseDown">
+		<Button Name="Exit_Button" HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Height="50" Click="Exit_Button_Click" Background="White" BorderBrush="White">
+			<Canvas Margin="-18">
+				<Line X1="0" Y1="0" X2="36" Y2="36" Stroke="Gray" StrokeThickness="3"/>
+				<Line X1="36" Y1="0" X2="0" Y2="36" Stroke="Gray" StrokeThickness="3"/>
+			</Canvas>
+		</Button>
+		<Button x:Name="Start_Button" Content="Start Benchmark" FontSize="20" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Height="77" Width="236" Click="Start_Button_Click"/>
+		<Rectangle Name="Response_Rectangle" Margin="140,189,140,0" Fill="Gray" PreviewMouseDown="Response_Rectangle_PreviewMouseDown" PreviewKeyDown="Response_Rectangle_PreviewKeyDown" Focusable="True" Height="215" VerticalAlignment="Top"/>
+		<TextBlock Name="ElapsedMilliseconds_TextBlock" HorizontalAlignment="Center" Margin="0,277,0,0" TextWrapping="Wrap" Text="0.00ms" FontSize="20" Height="27" VerticalAlignment="Top"/>
+		<StackPanel Margin="0,124,0,0" VerticalAlignment="Top">
+			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="This may test your reaction speed 5 times" FontSize="20" Height="27"/>
+			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Hit the mouse or Space Bar when it turns RED!" FontSize="20" Height="27"/>
+		</StackPanel>
+		<StackPanel Name="TestResults_StackPanel" HorizontalAlignment="Left" Height="215" Margin="24,189,0,0" VerticalAlignment="Top" Width="111" Background="#FFECECEC"/>
+	</Grid>
+</Window>
